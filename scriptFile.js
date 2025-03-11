@@ -1,5 +1,7 @@
 let boxes = document.querySelectorAll(".box");
 let buttonRefresh = document.querySelector("#buttonRefresh");
+let winner = document.querySelector(".winner");
+let winnerCardText = document.querySelector("#winner-card-text");
 let isTurnO = true;
 let patterns = [
     [0, 1, 2],
@@ -12,16 +14,36 @@ let patterns = [
     [6, 7, 8],
 ];
 
-boxes.forEach((box)=>{
-box.addEventListener("click", ()=>{
-    if (isTurnO){
-        box.innerText = "O";
-        isTurnO = false;
-    }
-    else{
-        box.innerText = "X";
-        isTurnO = true;
-    }
-    box.disabled = true;
+boxes.forEach((box) => {
+    box.addEventListener("click", () => {
+        if (isTurnO) {
+            box.innerText = "O";
+            isTurnO = false;
+        }
+        else {
+            box.innerText = "X";
+            isTurnO = true;
+        }
+        box.disabled = true;
+        // if we want to use div rather than button or input we can use this code:
+        // box.style.pointerEvents = "none"; 
+
+        checkWinner();
+    });
 });
-});
+
+const checkWinner = () => {
+    for (pattern of patterns) {
+        let positionOneValue = boxes[pattern[0]].innerText;
+        let positionTwoValue = boxes[pattern[1]].innerText;
+        let positionThreeValue = boxes[pattern[2]].innerText;
+        if (positionOneValue != "" && positionTwoValue != "" && positionThreeValue != "") {
+            if (positionOneValue === positionTwoValue && positionTwoValue === positionThreeValue) {
+                
+                winnerCardText.innerHTML = winnerCardText.innerHTML + "<br>Winner is " + positionOneValue;
+
+                winner.style.visibility = "visible";
+            }
+        }
+    }
+}
