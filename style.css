@@ -17,6 +17,11 @@ body {
     justify-content: center;
 }
 
+@media (max-width: 900px) {
+    .board{
+        width: 80%;
+    }
+}
 .box {
     margin: 10px;
     height: 100px;
@@ -41,4 +46,37 @@ body {
     border-radius: 10px;
 }
 
+.button-new{
+    margin-top: 100px;
+    height: 60px;
+    padding-inline: 50px;
+    color: rgb(0, 4, 33);
+    background: rgb(255, 161, 46);
+    border: rgb(0, 4, 33) 2px solid;
+    border-radius: 10px;
+}
 
+
+.winner{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.298);
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    visibility: hidden;
+}
+
+.winner-card{
+    color: rgb(0, 4, 33);
+    height: 500px;
+    width: 500px;
+    background: rgb(255, 161, 46);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
