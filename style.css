@@ -60,7 +60,7 @@ body {
 
 .winner{
     position: absolute;
-    background: rgba(255, 255, 255, 0.298);
+    background: rgb(0 60 78 / 41%);
     height: 100vh;
     width: 100vw;
     z-index: 100;
