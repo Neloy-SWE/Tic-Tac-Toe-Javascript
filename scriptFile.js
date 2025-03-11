@@ -22,8 +22,6 @@ box.addEventListener("click", ()=>{
         box.innerText = "X";
         isTurnO = true;
     }
-    debugger;
     box.disabled = true;
-    debugger;
 });
 });

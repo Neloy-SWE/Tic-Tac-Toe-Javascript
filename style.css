@@ -44,6 +44,7 @@ body {
     background: rgb(0, 4, 33);
     border: bisque 2px solid;
     border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 .button-new{
