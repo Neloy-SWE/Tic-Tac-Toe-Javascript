@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: rgb(0, 4, 33);
+    color: bisque;
+}
+
+.board {
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box {
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    background: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(0, 4, 33);
+    border-radius: 10px;
+}
+
+.button-refresh{
+    margin-top: 100px;
+    height: 60px;
+    padding-inline: 50px;
+    color: bisque;
+    background: rgb(0, 4, 33);
+    border: bisque 2px solid;
+    border-radius: 10px;
+}
+
+
