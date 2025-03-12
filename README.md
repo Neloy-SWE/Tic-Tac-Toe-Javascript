@@ -1,2 +1,2 @@
 # Tic-Tac-Toe-Javascript
-A simple html, css and java script project
+A simple html, css, bootstrap and java script project.

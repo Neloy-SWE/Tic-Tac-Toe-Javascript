@@ -18,10 +18,11 @@ body {
 }
 
 @media (max-width: 900px) {
-    .board{
+    .board {
         width: 80%;
     }
 }
+
 .box {
     margin: 10px;
     height: 100px;
@@ -36,7 +37,7 @@ body {
     border-radius: 10px;
 }
 
-.button-refresh{
+.button-refresh {
     margin-top: 100px;
     height: 60px;
     padding-inline: 50px;
@@ -47,7 +48,7 @@ body {
     margin-bottom: 30px;
 }
 
-.button-new{
+.button-new {
     margin-top: 100px;
     height: 60px;
     padding-inline: 50px;
@@ -58,7 +59,7 @@ body {
 }
 
 
-.winner{
+.winner {
     position: absolute;
     background: rgb(0 60 78 / 41%);
     height: 100vh;
@@ -67,7 +68,7 @@ body {
     visibility: hidden;
 }
 
-.winner-card{
+.winner-card {
     color: rgb(0, 4, 33);
     height: 500px;
     width: 500px;

@@ -2,6 +2,8 @@ let boxes = document.querySelectorAll(".box");
 let buttonRefresh = document.querySelector("#buttonRefresh");
 let winner = document.querySelector(".winner");
 let winnerCardText = document.querySelector("#winner-card-text");
+let buttonNewGame = document.querySelector(".button-new");
+// let buttonRefresh = document.querySelector("$buttonRefresh");
 let isTurnO = true;
 let patterns = [
     [0, 1, 2],
@@ -39,7 +41,7 @@ const checkWinner = () => {
         let positionThreeValue = boxes[pattern[2]].innerText;
         if (positionOneValue != "" && positionTwoValue != "" && positionThreeValue != "") {
             if (positionOneValue === positionTwoValue && positionTwoValue === positionThreeValue) {
-                
+
                 winnerCardText.innerHTML = winnerCardText.innerHTML + "<br>Winner is " + positionOneValue;
 
                 winner.style.visibility = "visible";
@@ -47,3 +49,16 @@ const checkWinner = () => {
         }
     }
 }
+
+const refreshGame = () => {
+    isTurnO = true;
+    winnerCardText.innerHTML = "Congratulations !!!";
+    winner.style.visibility = "hidden";
+    for (box of boxes) {
+        box.innerText = "";
+        box.disabled = false;
+    }
+}
+
+buttonNewGame.addEventListener("click", refreshGame);
+buttonRefresh.addEventListener("click", refreshGame);
