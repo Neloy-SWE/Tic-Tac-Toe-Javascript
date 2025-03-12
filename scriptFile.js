@@ -5,6 +5,8 @@ let winnerCardText = document.querySelector("#winner-card-text");
 let buttonNewGame = document.querySelector(".button-new");
 // let buttonRefresh = document.querySelector("$buttonRefresh");
 let isTurnO = true;
+let isDraw = false;
+let count = 0;
 let patterns = [
     [0, 1, 2],
     [0, 4, 8],
@@ -28,9 +30,13 @@ boxes.forEach((box) => {
         }
         box.disabled = true;
         // if we want to use div rather than button or input we can use this code:
-        // box.style.pointerEvents = "none"; 
-
+        // box.style.pointerEvents = "none";
+        count++;
         checkWinner();
+
+        if (count == 9 && isDraw) {
+            checkDraw();
+        }
     });
 });
 
@@ -41,17 +47,27 @@ const checkWinner = () => {
         let positionThreeValue = boxes[pattern[2]].innerText;
         if (positionOneValue != "" && positionTwoValue != "" && positionThreeValue != "") {
             if (positionOneValue === positionTwoValue && positionTwoValue === positionThreeValue) {
-
                 winnerCardText.innerHTML = winnerCardText.innerHTML + "<br>Winner is " + positionOneValue;
-
                 winner.style.visibility = "visible";
+                isDraw = false;
+            }
+            else {
+                isDraw = true;
             }
         }
+
     }
+}
+
+const checkDraw = () => {
+    winnerCardText.innerHTML = "Match is draw";
+    winner.style.visibility = "visible";
 }
 
 const refreshGame = () => {
     isTurnO = true;
+    count = 0;
+    isDraw = false;
     winnerCardText.innerHTML = "Congratulations !!!";
     winner.style.visibility = "hidden";
     for (box of boxes) {
